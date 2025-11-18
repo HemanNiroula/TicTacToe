@@ -24,6 +24,7 @@ function handleCellClick(e) {
 
   board[index] = currentPlayer;
   e.target.textContent = currentPlayer;
+  e.target.classList.add(currentPlayer); // Add color class
 
   checkWinner();
 }
@@ -59,7 +60,10 @@ function restartGame() {
   isGameActive = true;
   currentPlayer = "X";
   statusText.textContent = `Player ${currentPlayer}'s turn`;
-  cells.forEach((cell) => (cell.textContent = ""));
+  cells.forEach((cell) => {
+    cell.textContent = "";
+    cell.classList.remove("X", "O");
+  });
 }
 
 cells.forEach((cell) => cell.addEventListener("click", handleCellClick));

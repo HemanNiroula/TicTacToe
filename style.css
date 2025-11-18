@@ -1,48 +1,87 @@
+/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #f7f7f7;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   margin: 0;
-  padding: 20px;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  color: #333;
 }
 
 h1 {
+  font-size: 3rem;
   margin-bottom: 20px;
-  color: #333;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+/* Game Container */
 .game-container {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  gap: 5px;
-  justify-content: center;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Cells */
 .cell {
   background-color: #fff;
-  border: 2px solid #333;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 3rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cell:hover {
-  background-color: #e0e0e0;
+  transform: scale(1.1);
+  background-color: #f0f0f0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
+/* Player Colors */
+.cell.X {
+  color: #ff4d4d;
+}
+
+.cell.O {
+  color: #4d79ff;
+}
+
+/* Status */
 .status {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 1.5rem;
+  margin: 20px 0 10px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+/* Restart Button */
 button {
-  padding: 10px 20px;
-  font-size: 1rem;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
+  background: #fff;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: #f0f0f0;
+  transform: scale(1.05);
 }
